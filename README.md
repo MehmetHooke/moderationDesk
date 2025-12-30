@@ -1,73 +1,105 @@
-# React + TypeScript + Vite
+# ModerationDesk – Admin Panel Practice
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ModerationDesk, React + TypeScript kullanılarak geliştirilmiş bir **admin panel pratiği** projesidir.  
+Bu proje, REST API ile çalışan gerçek dünya admin panellerinde karşılaşılan temel problemleri çözmeye odaklanır.
 
-Currently, two official plugins are available:
+Amaç; **Axios, service layer, CRUD işlemleri, optimistic UI ve state yönetimi** konularını pratik ederek öğrenmektir.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- 🔄 **REST API Integration**
+  - GET / PATCH / DELETE işlemleri
+  - Axios ile API yönetimi
 
-## Expanding the ESLint configuration
+- 🧱 **Service Layer Architecture**
+  - UI ve API logic birbirinden ayrılmıştır
+  - Axios instance (`api.ts`) kullanımı
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- ⏳ **Loading & Error Handling**
+  - Global loading state
+  - Kullanıcıya anlamlı hata mesajları
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+- 🗑️ **Delete Item**
+  - Satır bazlı silme işlemi
+  - İşlem sonrası liste yenileme
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+- ✏️ **Update Item (PATCH)**
+  - Approve / Reject aksiyonları
+  - Title güncelleme
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+- ⚡ **Optimistic UI Update**
+  - Server cevabını beklemeden UI güncellenir
+  - Hata durumunda rollback yapılır
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+- 🎯 **Row-level Pending State**
+  - Sadece işlem yapılan satır disable edilir
+  - Daha iyi kullanıcı deneyimi (UX)
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+## 🧠 Learned Concepts
+
+Bu projede aşağıdaki kavramlar pratik edilmiştir:
+
+- Axios vs Fetch farkları
+- Axios instance (`axios.create`)
+- Service layer pattern
+- Async / await akışı
+- HTTP status & error handling
+- Optimistic update + rollback
+- Immutable state update (`map`, spread operator)
+- Row-level loading (`savingId` pattern)
+
+---
+
+## 🛠️ Tech Stack
+
+- **React**
+- **TypeScript**
+- **Axios**
+- **Vite**
+
+---
+
+## 📂 Project Structure
+
+src/
+├─ api/
+│ ├─ api.ts # Axios instance
+│ └─ error.ts # Error normalize helper
+├─ services/
+│ └─ moderationService.ts
+├─ App.tsx
+└─ main.tsx
+
+yaml
+
+
+---
+
+## ⚠️ Notes
+
+- API olarak `jsonplaceholder.typicode.com` kullanılmıştır.
+- JSONPlaceholder gerçek anlamda veri silmez/güncellemez;  
+  bu proje **API akışı ve UI davranışını öğrenme amaçlıdır**.
+
+---
+
+## 🎯 Next Steps
+
+Bu projeden sonra:
+- Film API (TMDB) ile çalışan bir uygulama
+- Firebase / Appwrite ile gerçek CRUD (Favorites)
+- Search, debounce, abort controller
+- Authentication & user-based data
+
+gibi daha ileri seviye projelere geçilmiştir.
+
+---
+
+## 👤 Author
+
+**Mehmet Höke**  
+React & Frontend Development Practice Project
