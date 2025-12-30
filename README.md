@@ -67,14 +67,18 @@ Bu projede aşağıdaki kavramlar pratik edilmiştir:
 
 src/
 ├─ api/
-│ ├─ api.ts # Axios instance
-│ └─ error.ts # Error normalize helper
-├─ services/
-│ └─ moderationService.ts
-├─ App.tsx
-└─ main.tsx
 
-yaml
+│ ├─ api.ts # Axios instance
+
+│ └─ error.ts # Error normalize helper
+
+├─ services/
+
+│ └─ moderationService.ts
+
+├─ App.tsx
+
+└─ main.tsx
 
 
 ---
