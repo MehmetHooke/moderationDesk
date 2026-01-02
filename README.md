@@ -3,7 +3,7 @@
 ModerationDesk, React + TypeScript kullanılarak geliştirilmiş bir **admin panel pratiği** projesidir.  
 Bu proje, REST API ile çalışan gerçek dünya admin panellerinde karşılaşılan temel problemleri çözmeye odaklanır.
 
-Amaç; **Axios, service layer, CRUD işlemleri, optimistic UI ve state yönetimi** konularını pratik ederek öğrenmektir.
+Amacım; **Axios, service layer, CRUD işlemleri, optimistic UI ve state yönetimi** konularını pratik ederek öğrenmektir.
 
 ---
 
